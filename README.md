@@ -1,10 +1,10 @@
 # Frontend - Sistema de Reservas "Eventos Vivos"
 
 ## Descripción
-[cite_start]Interfaz de usuario desarrollada para interactuar con la API de reservas, cumpliendo con estándares de diseño responsivo y moderno[cite: 64].
+Interfaz de usuario desarrollada para interactuar con la API de reservas, cumpliendo con estándares de diseño responsivo y moderno.
 
 ## Tecnologías
-- [cite_start]**Framework:** Angular 18+ [cite: 98]
+**Framework:** Angular 18+ [cite: 98]
 
 ## Instrucciones de ejecución
 1. Asegúrate de tener instalado Node.js y Angular CLI.
