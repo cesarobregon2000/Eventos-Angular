@@ -10,6 +10,14 @@
 1. Asegúrate de tener instalado Node.js y Angular CLI.
 2. Navega a la carpeta del proyecto y descarga las dependencias:
    `npm install`
-3. Ejecuta la aplicación:
-   `ng serve`
-4. Accede a `http://localhost:4200` en tu navegador.
+3.Configuración de la API
+Para que la aplicación pueda comunicarse con el backend, debes configurar la URL de la API. Edita el archivo `src/environments/environment.ts` (o `environment.development.ts`) y define la ruta de tu API local:
+
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:7229/api/v1.0' // Ajusta este puerto al puerto donde corra tu API de .NET
+};
+4. Ejecuta la aplicación:
+   `ng serve -o`
+5. Accede a `http://localhost:4200` en tu navegador.
