@@ -8,10 +8,18 @@ Interfaz de usuario desarrollada para interactuar con la API de reservas, cumpli
 
 ## Diagramas de Proceso
 A continuación, se detalla el flujo lógico del sistema para la gestión de reservas:
-<img width="1178" height="237" alt="Crear Reserva" src="https://github.com/user-attachments/assets/6cee59f4-27aa-4e94-8ddb-79fd1d5c7bfb" />
-<img width="1178" height="345" alt="Confirmar Pago" src="https://github.com/user-attachments/assets/3245a3a3-0ced-4d0e-8bdf-8e3a1a172872" />
-<img width="760" height="1078" alt="Cancelar Reserva" src="https://github.com/user-attachments/assets/b873d348-2f5f-4770-9428-c5c40e7f900f" />
+
+Crear Evento
 <img width="1178" height="1094" alt="Crear Evento" src="https://github.com/user-attachments/assets/6145083c-8a58-41ed-8819-395f323eb7be" />
+
+Crear Reserva
+<img width="1178" height="237" alt="Crear Reserva" src="https://github.com/user-attachments/assets/6cee59f4-27aa-4e94-8ddb-79fd1d5c7bfb" />
+
+Confirmar Pago
+<img width="1178" height="345" alt="Confirmar Pago" src="https://github.com/user-attachments/assets/3245a3a3-0ced-4d0e-8bdf-8e3a1a172872" />
+
+Cancelar Reserva
+<img width="760" height="1078" alt="Cancelar Reserva" src="https://github.com/user-attachments/assets/b873d348-2f5f-4770-9428-c5c40e7f900f" />
 
 ## Instrucciones de ejecución
 1. Asegúrate de tener instalado Node.js y Angular CLI.
