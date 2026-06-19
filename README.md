@@ -4,7 +4,7 @@
 Interfaz de usuario desarrollada para interactuar con la API de reservas, cumpliendo con estándares de diseño responsivo y moderno.
 
 ## Tecnologías
-**Framework:** Angular 18+ [cite: 98]
+**Framework:** Angular 18+ 
 
 ## Instrucciones de ejecución
 1. Asegúrate de tener instalado Node.js y Angular CLI.
