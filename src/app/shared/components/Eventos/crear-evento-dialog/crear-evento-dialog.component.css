@@ -1,0 +1,140 @@
+/* ==========================================================================
+   ESTILOS COMPONENTES DEL MODAL (CORREGIDOS)
+   ========================================================================== */
+
+/* Contenedor del Modal */
+::ng-deep .custom-modal {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 1.25rem !important; /* rounded-2xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3) !important;
+    padding: 1.75rem !important;
+}
+
+/* Encabezado - CORREGIDO border-bottom */
+::ng-deep .custom-modal .p-dialog-header {
+    background: transparent !important;
+    padding: 0 0 1rem 0 !important;
+    border-bottom: 1px solid #f1f5f9 !important; /* Corregido aquí */
+}
+
+::ng-deep .custom-modal .p-dialog-title {
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    font-size: 1.25rem !important;
+}
+
+/* Guía Visual para los inputs */
+::ng-deep .form-field {
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0.625rem !important;
+    padding: 0.625rem 0.875rem !important;
+    color: #334155 !important;
+    font-size: 0.875rem !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Efecto Focus Activo */
+::ng-deep .form-field:focus,
+::ng-deep .form-field.p-focus,
+::ng-deep .p-dropdown.form-field:not(.p-disabled).p-focus {
+    background-color: #ffffff !important;
+    border-color: #0d9488 !important; /* Teal-600 */
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15) !important;
+    outline: none !important;
+}
+
+/* Ajustes internos del Dropdown */
+::ng-deep .p-dropdown .p-dropdown-label {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+::ng-deep .p-dropdown .p-dropdown-trigger {
+    color: #64748b !important;
+}
+
+/* Tablas */
+::ng-deep .p-datatable {
+    border-radius: 0.75rem !important;
+    overflow: hidden !important;
+}
+
+/* ==========================================================================
+   SOLUCIÓN DRAPDOWN FLOTANTE PRIMENG v18 (styles.css global)
+   ========================================================================== */
+
+:root {
+    --p-select-panel-background: #ffffff !important;
+    --p-dropdown-panel-background: #ffffff !important;
+    --p-overlay-panel-background: #ffffff !important;
+    --p-popover-background: #ffffff !important;
+}
+
+/* Forzar opacidad y colores base en los overlays flotantes */
+.p-dropdown-panel, 
+.p-select-panel,
+.p-overlaypanel {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2) !important;
+    z-index: 9999999 !important;
+}
+
+/* Contenedores de las listas */
+.p-dropdown-items-wrapper,
+.p-select-items-wrapper,
+.p-dropdown-items,
+.p-select-items {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+/* Texto de las opciones */
+.p-dropdown-item,
+.p-select-item {
+    color: #334155 !important;
+    padding: 0.625rem 0.875rem !important;
+}
+
+/* Hover e Highlight corporativo */
+.p-dropdown-item:hover,
+.p-select-item:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+.p-dropdown-item.p-highlight,
+.p-select-item.p-highlight {
+    background-color: #ccfbf1 !important;
+    color: #115e59 !important;
+    font-weight: 600 !important;
+}
+
+/* Forzar opacidad absoluta en Overlays de la v18 de PrimeNG */
+.p-dropdown-panel, 
+.p-select-panel,
+.p-overlaypanel {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-dropdown-items-wrapper,
+.p-dropdown-items,
+.p-select-items-wrapper,
+.p-select-items {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.p-dropdown-item,
+.p-select-item {
+    color: #334155 !important;
+}

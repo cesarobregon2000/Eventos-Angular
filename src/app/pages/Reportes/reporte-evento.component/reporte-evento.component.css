@@ -1,0 +1,34 @@
+/* Estilo base para el contenedor */
+:host {
+    display: block;
+    padding: 1rem;
+}
+
+/* Mejora la tabla */
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    background: #f8fafc !important;
+    color: #475569 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 1rem;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Efecto hover en filas */
+::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+    background-color: #f1f5f9 !important;
+    transition: background 0.2s ease;
+}
+
+/* Estilo para los números (Ingresos y cantidades) */
+.stat-value {
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para números */
+    font-weight: bold;
+}

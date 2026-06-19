@@ -1,0 +1,65 @@
+<div class="h-full p-4">
+
+  <div class="flex justify-between items-center mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-800">
+        Gestión de Eventos
+      </h1>
+      <p class="text-slate-500">
+        Administración de eventos y reservas
+      </p>
+    </div>
+
+   <button
+  type="button"
+  (click)="abrirModalCrearEvento()"
+  class="flex items-center gap-2 px-4 py-2.5 bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-semibold text-sm rounded-xl transition-all duration-150 shadow-md shadow-teal-100 border border-teal-600/20">
+  <i class="pi pi-plus-circle text-base"></i>
+  <span>Crear Evento</span>
+</button>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+    <div class="lg:col-span-3">
+      <app-lista-eventos
+        (eventoSeleccionado)="seleccionarEvento($event.eventoID)">
+      </app-lista-eventos>
+    </div>
+
+    <div class="lg:col-span-9">
+      @if(eventoSeleccionadoId > 0){
+
+        <div class="flex flex-col gap-6">
+          <app-detalle-evento
+            [eventoId]="eventoSeleccionadoId">
+          </app-detalle-evento>
+
+          <app-lista-reservas
+            [eventoId]="eventoSeleccionadoId">
+          </app-lista-reservas>
+        </div>
+
+      } @else {
+
+        <div class="bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+          <i class="pi pi-calendar text-5xl text-slate-300 mb-3 block"></i>
+          <h3 class="text-xl font-semibold text-slate-700 mb-2">
+            Selecciona un evento
+          </h3>
+          <p class="text-slate-500">
+            Elige un evento de la lista para visualizar sus detalles y reservas.
+          </p>
+        </div>
+
+      }
+    </div>
+
+  </div>
+
+  <app-crear-evento-dialog
+    [(visible)]="mostrarCrearEvento"
+    (eventoCreado)="eventoCreado()">
+  </app-crear-evento-dialog>
+
+</div>

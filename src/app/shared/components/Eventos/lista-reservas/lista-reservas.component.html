@@ -1,0 +1,75 @@
+<div class="bg-white border border-slate-200 rounded-xl mt-6 shadow-sm overflow-hidden my-2">
+
+  <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <i class="pi pi-ticket text-teal-600 text-lg"></i>
+      <h2 class="text-base font-bold text-slate-800 tracking-tight">
+        Control de Reservas
+      </h2>
+    </div>
+    <span class="text-xs bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full font-semibold">
+      {{ reservas.length }} Total
+    </span>
+  </div>
+
+  <p-table [value]="reservas" [loading]="cargando" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+            <th class="text-center">Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reserva>
+        <tr>
+       <td>{{ reserva.nombre }}</td>
+            <td>{{ reserva.email }}</td>
+            <td>{{ reserva.cantidad }}</td>
+            <td>
+                <p-tag [value]="reserva.estado" [severity]="getSeverity(reserva.estado)"></p-tag>
+            </td>
+            <td class="text-center">
+             <div class="flex justify-center gap-3">
+   <p-button *ngIf="permitirConfirmar"
+    icon="pi pi-check"
+    severity="success"
+    [style]="{width: '45px', height: '45px'}"
+    (click)="confirmarPago(reserva.reservaId)"
+    pTooltip="Confirmar Pago"
+    tooltipPosition="top">
+</p-button>
+
+    <p-button
+        icon="pi pi-times"
+        severity="danger"
+        [style]="{width: '45px', height: '45px'}"
+        size="large"
+        (click)="cancelarReserva(reserva.reservaId)"
+        [disabled]="reserva.estado == 'CONFIRMADA'"
+        pTooltip="Cancelar Reserva"
+        tooltipPosition="top">
+    </p-button>
+</div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div *ngIf="mostrarModal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden animate-in fade-in zoom-in duration-200">
+    <div class="p-6 pb-2">
+      <h3 class="text-lg font-bold text-slate-800">{{ tituloModal }}</h3>
+      <p class="text-sm text-slate-500 mt-1">{{ mensajeModal }}</p>
+    </div>
+    <div class="p-6 pt-4 flex justify-end gap-3">
+      <button (click)="cerrarModal()" class="px-4 py-2 text-sm font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200 transition">
+        Cancelar
+      </button>
+      <button (click)="ejecutarAccion()" class="px-4 py-2 text-sm font-semibold text-white bg-teal-700 rounded-lg hover:bg-teal-800 transition">
+        Confirmar
+      </button>
+    </div>
+  </div>
+</div>
+  </div>

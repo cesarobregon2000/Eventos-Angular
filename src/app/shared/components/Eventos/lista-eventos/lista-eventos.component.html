@@ -1,0 +1,48 @@
+<div class="bg-white border border-slate-200 rounded-xl h-full flex flex-col shadow-sm overflow-hidden">
+
+  <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+    <h2 class="font-bold text-base text-slate-800 tracking-tight">
+      Eventos Disponibles
+    </h2>
+    <span class="text-xs bg-slate-200/70 text-slate-700 px-2.5 py-0.5 rounded-full font-semibold">
+      {{ eventos.length }}
+    </span>
+  </div>
+
+  <div class="overflow-y-auto flex-1 p-3 bg-white max-h-[calc(100vh-200px)] space-y-2">
+
+    @for (evento of eventos; track evento.eventoID) {
+      
+      <div 
+        (click)="seleccionarEvento(evento)"
+        [ngClass]="eventoActivo === evento.eventoID ? 'bg-teal-50/60 border-teal-600' : 'bg-white border-slate-100 hover:border-slate-300 hover:bg-slate-50'"
+        class="group flex items-center justify-between p-3.5 rounded-xl border transition-all duration-200 cursor-pointer">
+        
+        <div class="flex-1 min-w-0 pr-3">
+          <p class="font-semibold text-sm text-slate-700 truncate group-hover:text-slate-900">
+            {{ evento.titulo }}
+          </p>
+        </div>
+
+        <div class="flex-shrink-0">
+          <span 
+            class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase inline-block" 
+            [ngClass]="getEstadoClass(evento.estado)">
+            {{ evento.estado }}
+          </span>
+        </div>
+
+      </div>
+
+    } @empty {
+      
+      <div class="text-center py-16 px-4">
+        <i class="pi pi-calendar-times text-4xl text-slate-300 mb-3 block"></i>
+        <h4 class="text-sm font-semibold text-slate-600">No hay eventos</h4>
+        <p class="text-xs text-slate-400 mt-1">La API no devolvió registros activos en la base de datos.</p>
+      </div>
+
+    }
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+.campo-label {
+  display: block;
+  font-size: .85rem;
+  color: #64748b;
+  margin-bottom: .3rem;
+}
+
+.campo-valor {
+  font-weight: 500;
+}
+
+.descripcion-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: .75rem;
+  padding: 1rem;
+  min-height: 120px;
+  white-space: pre-wrap;
+}

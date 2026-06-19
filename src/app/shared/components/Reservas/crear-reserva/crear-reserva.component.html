@@ -1,0 +1,41 @@
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+  <h2 class="text-xl font-bold mb-4 text-gray-800">Nueva Reserva</h2>
+
+  <form (submit)="guardarReserva()" class="space-y-4">
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Evento</label>
+      <input readonly [value]="eventoSeleccionado?.titulo || 'Seleccione un evento'"
+             class="w-full p-2 mt-1 border rounded bg-gray-50 text-gray-600 border-gray-200">
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+      <input [(ngModel)]="reserva.nombre" name="nombre" required
+             class="w-full p-2 mt-1 border rounded focus:ring-2 focus:ring-teal-500 outline-none">
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input [(ngModel)]="reserva.email" name="email" type="email" required
+               class="w-full p-2 mt-1 border rounded focus:ring-2 focus:ring-teal-500 outline-none">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Cantidad</label>
+        <input [(ngModel)]="reserva.cantidad" name="cantidad" type="number" min="1"
+               class="w-full p-2 mt-1 border rounded focus:ring-2 focus:ring-teal-500 outline-none">
+      </div>
+    </div>
+
+    <div class="flex gap-3 pt-4">
+      <button type="button" (click)="cancelar()"
+              class="flex-1 py-2.5 border border-red-200 text-red-600 rounded-lg hover:bg-red-50 transition font-semibold">
+        Cancelar
+      </button>
+      <button type="submit"
+              class="flex-1 py-2.5 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition font-semibold shadow-lg shadow-teal-100">
+        Guardar Reserva
+      </button>
+    </div>
+  </form>
+</div>

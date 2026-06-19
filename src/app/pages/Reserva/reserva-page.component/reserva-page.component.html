@@ -1,0 +1,32 @@
+<div class="h-full p-4">
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold text-slate-800">Reservar Cupos</h1>
+    <p class="text-slate-500">Selecciona un evento para gestionar sus reservas</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-3">
+      <app-lista-eventos (eventoSeleccionado)="manejarSeleccion($event)">
+      </app-lista-eventos>
+    </div>
+
+    <div class="lg:col-span-9">
+      @if(eventoSeleccionado) {
+        <div class="flex flex-col gap-6">
+          <app-crear-reserva
+            [eventoSeleccionado]="eventoSeleccionado"
+            (reservaCreada)="actualizarListaReservas()">
+          </app-crear-reserva>
+
+          <app-lista-reservas [eventoId]="eventoSeleccionado.eventoID" [permitirConfirmar]="false"> </app-lista-reservas>
+        </div>
+      } @else {
+        <div class="bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+          <i class="pi pi-ticket text-5xl text-slate-300 mb-3 block"></i>
+          <h3 class="text-xl font-semibold text-slate-700">Selecciona un evento</h3>
+          <p class="text-slate-500">Elige un evento para iniciar el proceso de reserva.</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
