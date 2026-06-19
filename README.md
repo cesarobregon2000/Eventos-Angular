@@ -16,7 +16,7 @@ Para que la aplicación pueda comunicarse con el backend, debes configurar la UR
 ```typescript
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:7229/api/v1.0' // Ajusta este puerto al puerto donde corra tu API de .NET
+  apiUrl: 'https://localhost:0000/api/v1.0' // Ajusta este puerto al puerto donde corra tu API de .NET
 };
 4. Ejecuta la aplicación:
    `ng serve -o`
